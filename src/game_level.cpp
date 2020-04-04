@@ -2,7 +2,7 @@
 #include <fstream>
 #include <sstream>
 
-void GameLevel::LoadLevel(const char *file_path, unsigned int levelWidth, unsigned int levelHeight)
+void GameLevel::Load(const char *file_path, unsigned int levelWidth, unsigned int levelHeight)
 {
 	// Clear old data
 	_Bricks.clear();

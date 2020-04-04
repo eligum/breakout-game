@@ -15,10 +15,10 @@ public:
 public:
 	GameLevel() {}
 	/* Load level from file */
-	void LoadLevel(const char *file_path, unsigned int lvlWidth, unsigned int  lvlHeight);
+	void Load(const char *file_path, unsigned int levelWidth, unsigned int  levelHeight);
 	/* Render level */
 	void Draw(SpriteRenderer& renderer);
-	/* Check if level is completed, all non-solid bricks are destroyed */
+	/* Check if level is completed (all non-solid bricks are destroyed) */
 	bool IsCompleted() const;
 private:
 	/* Initialize level from tile data */

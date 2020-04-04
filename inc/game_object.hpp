@@ -6,6 +6,9 @@
 #include "texture2D.hpp"
 #include "sprite_renderer.hpp"
 
+/* Container object for holding all state relevant for a single
+game object entity. Each object in the game likely needs the
+minimal of state as described within GameObject. */
 class GameObject
 {
 public:
