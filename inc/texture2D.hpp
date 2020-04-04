@@ -22,6 +22,7 @@ public:
 	Texture2D();
 	void Generate(unsigned int width, unsigned int height, byte *data);
 	void Bind() const;
+	void Unbind();
 };
 
 #endif

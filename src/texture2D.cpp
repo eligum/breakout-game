@@ -5,7 +5,7 @@ Texture2D::Texture2D()
 	:
 	_Width(0),
 	_Height(0),
-	_Internal_Format(GL_RGB),
+	_Internal_Format(GL_RGB8),
 	_Image_Format(GL_RGB),
 	_Wrap_S(GL_REPEAT),
 	_Wrap_T(GL_REPEAT),
@@ -36,4 +36,9 @@ void Texture2D::Generate(unsigned int width, unsigned int height, byte *data)
 void Texture2D::Bind() const
 {
 	glBindTexture(GL_TEXTURE_2D, _ID);
+}
+
+void Texture2D::Unbind()
+{
+	glBindTexture(GL_TEXTURE_2D, 0);
 }

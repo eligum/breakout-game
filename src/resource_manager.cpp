@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include <SOIL.h>
+#include "stb_image.h"
 
 // Instantiate static variables
 std::map<std::string, Shader>	ResourceManager::Shaders;
@@ -96,14 +96,15 @@ Texture2D ResourceManager::loadTextureFromFile(const char *file_path, bool alpha
 	Texture2D texture;
 	if (alpha)
 	{
-		texture._Internal_Format = GL_RGBA;
+		texture._Internal_Format = GL_RGBA8;
 		texture._Image_Format = GL_RGBA;
 	}
 	/* Load image and generate texture */
+	stbi_set_flip_vertically_on_load(1);
 	int width, height;
-	byte *image = SOIL_load_image(file_path, &width, &height, 0, (texture._Image_Format == GL_RGBA) ? SOIL_LOAD_RGBA : SOIL_LOAD_RGB);
+	byte *image = stbi_load(file_path, &width, &height, 0, (texture._Image_Format == GL_RGBA) ? 4 : 3);
 	texture.Generate(width, height, image);
 	/* Free image data */
-	SOIL_free_image_data(image);
+	stbi_image_free(image);
 	return texture;
 }

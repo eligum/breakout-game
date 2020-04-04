@@ -7,7 +7,7 @@ TARGET_DIR		:= $(BUILD_DIR)/bin
 
 CXX             := g++
 CXXFLAGS        := -std=c++11 -Wall
-LDFLAGS         := -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lSOIL
+LDFLAGS         := -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl
 
 SRCS			:= $(shell find $(SRC_DIR) -name *.cpp -or -name *.c)
 OBJS			:= $(addprefix $(BUILD_DIR)/, $(notdir $(SRCS:%=%.o)))

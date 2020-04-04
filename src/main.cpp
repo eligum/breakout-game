@@ -36,7 +36,7 @@ int main()
 
 	/* Initialize game, load resources */
 	game.Init();
-
+	
 	float deltaTime = 0.0f;
 	float lastFrame = 0.0f;
 
