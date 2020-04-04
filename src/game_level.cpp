@@ -29,9 +29,9 @@ void GameLevel::Load(const char *file_path, unsigned int levelWidth, unsigned in
 
 void GameLevel::Draw(SpriteRenderer& renderer)
 {
-	for (GameObject& tile : _Bricks)
-		if (!tile._IsDestroyed)
-			tile.Draw(renderer);
+	for (GameObject& brick : _Bricks)
+		if (!brick._IsDestroyed)
+			brick.Draw(renderer);
 }
 
 bool GameLevel::IsCompleted() const
@@ -65,7 +65,7 @@ void GameLevel::init(Matrixui tileData, unsigned int levelWidth, unsigned int le
 			{
 				glm::vec3 color(1.0f);	// Default (leave untouched texture color)
 				if (tileData[y][x] == 2)
-					color = glm::vec3(0.2f, 0.6f, 0.1f);
+					color = glm::vec3(0.1f, 0.6f, 0.9f);
 				else if (tileData[y][x] == 3)
 					color = glm::vec3(0.0f, 0.7f, 0.0f);
 				else if (tileData[y][x] == 4)

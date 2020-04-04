@@ -34,7 +34,7 @@ void Game::Init()
 	ResourceManager::LoadTexture("data/img/block.png", true, "block");
 	ResourceManager::LoadTexture("data/img/block_solid.png", true, "block_solid");
 	// Load levels
-	GameLevel level_1; level_1.Load("data/levels/L01.txt", _Width, _Height * 0.5);
+	_Levels[0].Load("data/levels/L01.txt", _Width, _Height * 0.5);
 }
 
 void Game::ProcessInput(float dt)

@@ -19,7 +19,8 @@ GameObject::GameObject(glm::vec2 pos, glm::vec2 size, Texture2D sprite, glm::vec
 	_Color(color),
 	_Rotation(0.0f),
 	_IsSolid(false),
-	_IsDestroyed(false)
+	_IsDestroyed(false),
+	_Sprite(sprite)
 {}
 
 void GameObject::Draw(SpriteRenderer& renderer)
