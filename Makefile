@@ -14,6 +14,8 @@ OBJS			:= $(addprefix $(BUILD_DIR)/, $(notdir $(SRCS:%=%.o)))
 DEPS			:= $(OBJS:.o=.d)
 
 ################################################################
+.PHONY: all clean
+
 all: $(TARGET_DIR)/$(TARGET)
 
 $(TARGET_DIR)/$(TARGET): $(OBJS)
@@ -25,7 +27,6 @@ $(BUILD_DIR)/%.c.o: $(SRC_DIR)/%.c
 $(BUILD_DIR)/%.cpp.o: $(SRC_DIR)/%.cpp
 	$(CXX) -I $(INC_DIR) $(CXXFLAGS) -c $< -o $@
 
-.PHONY: clean
 clean:
 	rm -rf $(BUILD_DIR)
 	@mkdir -p $(TARGET_DIR)
